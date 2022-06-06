@@ -11,8 +11,30 @@
         display: -ms-grid;
         display: grid;
 
-        grid-template-rows: 500px 600px 400px 500px;
-        grid-template-columns: 500px 650px 400px;
+        /* -ms-grid-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        -ms-grid-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); */
+
+        /* 
+          These two properties define the rows and columns of our CSS Grid.
+          We use the repeat function to repeat the same measurement for each
+          row and the same measurement for each column.
+
+          The auto-fill value allows us to create as many rows or columns that
+          we can in the space provided by the grid container. The auto-fill value 
+          does not collapse new columns and will preserve the space created
+          by new columns
+        */
+        /* grid-template-rows: repeat(auto-fill, 300px);
+
+        grid-template-columns: repeat(auto-fill, 400px); */
+
+        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+
+        gap: 10px;
       }
       img {
         width: 100%;
@@ -49,7 +71,7 @@
         <img src="images/Steph.jfif" />
         <img src="images/Russ.jpeg" />
         <img src="images/ja.jfif" />
-        <img src="images/derozan.jpg" />
+        <img src="images/derozan.jpeg" />
       </section>
     </main>
   </body>
