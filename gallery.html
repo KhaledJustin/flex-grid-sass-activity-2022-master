@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Photo Grid | Advanced CSS</title>
     <link rel="stylesheet" href="stylesheets/page-styling.css" />
+    <style>
+      section {
+        display: -ms-grid;
+        display: grid;
+
+        grid-template-rows: 500px 600px 400px 500px;
+        grid-template-columns: 500px 650px 400px;
+      }
+      img {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -26,18 +38,18 @@
     <main>
       <h2>CSS Grid Photo Gallery</h2>
       <section>
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
-        <img />
+        <img src="images/harlow.jpg" />
+        <img src="images/harden.jpeg" />
+        <img src="images/kyrie.jpg" />
+        <img src="images/jimmy.jpg" />
+        <img src="images/Lebron.jpg" />
+        <img src="images/tatum.webp" />
+        <img src="images/luka.jpg" />
+        <img src="images/kawhi.jpg" />
+        <img src="images/Steph.jfif" />
+        <img src="images/Russ.jpeg" />
+        <img src="images/ja.jfif" />
+        <img src="images/derozan.jpg" />
       </section>
     </main>
   </body>
