@@ -17,13 +17,13 @@
         -ms-grid-columns: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr); */
 
-        /* 
+        /*
           These two properties define the rows and columns of our CSS Grid.
           We use the repeat function to repeat the same measurement for each
           row and the same measurement for each column.
 
           The auto-fill value allows us to create as many rows or columns that
-          we can in the space provided by the grid container. The auto-fill value 
+          we can in the space provided by the grid container. The auto-fill value
           does not collapse new columns and will preserve the space created
           by new columns
         */
@@ -31,13 +31,71 @@
 
         grid-template-columns: repeat(auto-fill, 400px); */
 
-        grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-template-rows: repeat(4, minmax(300px, 1fr));
+        grid-template-columns: repeat(3, minmax(400px, 1fr));
 
+        grid-template-areas:
+          "image-five image-six image-six"
+          "image-eleven image-six image-six"
+          "image-seven image-seven image-ten"
+          "image-eight image-two image-four";
+
+        /* 
+            The below could be helpful for defining functional
+            areas in your website with the help of CSS Grid.
+            
+            grid-template-areas: 
+              "header header header header"
+              "article article section1 section2"
+              "article article image-one image-two"
+              "article article image-text1 image-text2"
+              "footer footer footer footer"
+          */
         gap: 10px;
       }
       img {
         width: 100%;
+      }
+
+      /* #image-one {*/
+      /*
+          This styles the ID with image one to start at the first
+          row line and the second column line. the ID of image on
+          then stops at row line 3 and column line 4
+        */
+      /* grid-area: 1 / 2 / span 2 / span 2;
+      } */
+      /* #image-ten {
+        /*
+          This styles the ID with image one to start at the first
+          row line and the second column line. the ID of image on
+          then stops at row line 3 and column line 4
+        */
+      /* grid-area: 4 / 1 / span 2 / span 2;
+      }  */
+      #image-five {
+        grid-area: image-five;
+      }
+      #image-six {
+        grid-area: image-six;
+      }
+      #image-seven {
+        grid-area: image-seven;
+      }
+      #image-eight {
+        grid-area: image-eight;
+      }
+      #image-nine {
+        grid-area: image-nine;
+      }
+      #image-ten {
+        grid-area: image-ten;
+      }
+      #image-eleven {
+        grid-area: image-eleven;
+      }
+      #image-twelve {
+        grid-area: image-twelve;
       }
     </style>
   </head>
@@ -60,18 +118,18 @@
     <main>
       <h2>CSS Grid Photo Gallery</h2>
       <section>
-        <img src="images/harlow.jpg" />
-        <img src="images/harden.jpeg" />
-        <img src="images/kyrie.jpg" />
-        <img src="images/jimmy.jpg" />
-        <img src="images/Lebron.jpg" />
-        <img src="images/tatum.webp" />
-        <img src="images/luka.jpg" />
-        <img src="images/kawhi.jpg" />
-        <img src="images/Steph.jfif" />
-        <img src="images/Russ.jpeg" />
-        <img src="images/ja.jfif" />
-        <img src="images/derozan.jpeg" />
+        <img src="images/harlow.jpg" id="image-one" />
+        <img src="images/harden.jpeg" id="image-two" />
+        <img src="images/kyrie.jpg" id="image-three" />
+        <img src="images/jimmy.jpg" id="image-four" />
+        <img src="images/Lebron.jpg" id="image-five" />
+        <img src="images/tatum.webp" id="image-six" />
+        <img src="images/luka.jpg" id="image-seven" />
+        <img src="images/kawhi.jpg" id="image-eight" />
+        <img src="images/Steph.jfif" id="image-nine" />
+        <img src="images/Russ.jpeg" id="image-ten" />
+        <img src="images/ja.jfif" id="image-eleven" />
+        <img src="images/derozan.jpeg" id="image-twelve" />
       </section>
     </main>
   </body>

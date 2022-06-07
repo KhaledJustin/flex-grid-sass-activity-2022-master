@@ -6,6 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Grid | Advanced CSS</title>
     <link rel="stylesheet" href="stylesheets/page-styling.css" />
+    <style>
+      form {
+        display: -ms-grid;
+        display: grid;
+
+        -ms-grid-columns: [form-labels] auto [form-text-inputs] 1fr;
+        grid-template-columns: [form-labels] auto [form-text-inputs] 1fr;
+
+        gap: 8%;
+      }
+
+      label {
+        grid-column: form-labels;
+      }
+
+      input {
+        grid-column: form-text-inputs;
+      }
+
+      textarea {
+        grid-column: form-text-inputs;
+      }
+
+      input[type="submit"] {
+        grid-column: 1 / span 2;
+      }
+
+      @media all and (max-width: 700px) {
+        /* 
+          On a smaller screen,
+        */
+        form {
+          grid-template-columns: repeat(autofit, max-content);
+          grid-template-columns: 1fr;
+
+          gap: 3%;
+        }
+        label {
+          grid-column: 1 / span 1;
+        }
+        input {
+          grid-column: 1 / span 1;
+        }
+        textarea {
+          grid-column: 1 / span 1;
+        }
+
+        input[type="submit"] {
+          grid-column: 1 / span 1;
+        }
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -63,7 +115,7 @@
           required
         />
         <label for="message">Please Enter Your Message Below:</label>
-        <textarea id="message" rows="10" cols="50"></textarea>
+        <textarea id="message" rows="15" cols="50"></textarea>
         <input type="submit" value="Send Us Your Message!" />
       </form>
     </main>
